@@ -1,0 +1,46 @@
+import React from 'react';
+// import landingImage from '../images/landingImage.jpg'
+import '../styles/landingPage.css'
+import logoImage from '../images/mainLogo1.jpg'
+import downWardArrow from '../images/downwardArrow.png'
+
+const MainContent = () => {
+
+
+
+    return (
+        
+
+        // <div>
+            
+        //     <img src={landingImage} alt="" className='landingImage'/>
+            
+            
+        //     </div>
+
+        <div className="heroSection">
+  <div className="heroContent">
+    <img src={logoImage} alt="Logo" className="logo" />
+    <h3 className="main-text">
+      EAT{"\n"}TENNIS{"\n"}REPEAT
+    </h3>
+  </div>
+
+  <div className="heroSubContent">
+    <h4 className="sub-text">
+      The Academy That Offers{"\n"}
+      Everything You Need to{"\n"}
+      Become The Best
+    </h4>
+    <button className="join-button">Join Now</button>
+    <img src={downWardArrow} alt="" className="downward-arrow" />
+  </div>
+  
+</div>
+
+        
+
+    )
+}
+
+export default MainContent;
