@@ -2,6 +2,12 @@
 
 /* landingPage.css */
 
+@font-face {
+  font-family: 'Plush';
+  src: url('../augsburg-font-family-1749727013-0/Plush-Trial-Regular-BF654c40145b0dd.otf') format('otf')
+
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -46,7 +52,7 @@ body {
         text-align: left;
         display: flex;
         flex-direction: column;
-        margin-left: -16em;
+        margin-left: -17em;
         margin-top: 34em;
         width: 100%;
       }
@@ -75,6 +81,65 @@ body {
         width: 10%;
         height: 90%;
       }
+
+      .whoWeAreSection {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .titles-right {
+        text-align: right;
+        position: relative;
+      }
+      
+      .titles-right h4 {
+        font-family: 'Plush', sans-serif;
+        font-size: 24px;
+        color: #000000;
+        display: inline-block;
+        position: relative;
+        padding-bottom: 8px;
+      }
+
+      .titles-right h4::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 6px;
+        border-top: 2px solid #000000;
+        border-bottom: 2px solid #000000;
+      }
+      
+      .whoContent {
+        display: block; 
+        padding: 10px;
+        overflow: hidden; 
+      }
+      
+      .whoImage {
+        float: right;
+        width: 55%;
+        max-width: 210px;
+        height: auto;
+        margin-left: 15px;
+        margin-bottom: 10px;
+      }
+      
+      .whoText {
+        font-family: 'Plush', sans-serif;
+        color: #000000;
+        font-size: 16px;
+      }
+      
+      .whoText p {
+        margin-bottom: 15px;
+        line-height: 1.5;
+      }
+      
+      
   }
 
 
