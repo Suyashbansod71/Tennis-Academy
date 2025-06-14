@@ -139,6 +139,35 @@ body {
         line-height: 1.5;
       }
       
+      .achievements {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+      }
+      .titles-left {
+        text-align: left;
+        position: relative;
+      }
+      
+      .titles-left h4 {
+        font-family: 'Plush', sans-serif;
+        font-size: 24px;
+        color: #000000;
+        display: inline-block;
+        position: relative;
+        padding-bottom: 8px;
+      }
+
+      .titles-left h4::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 6px;
+        border-top: 2px solid #000000;
+        border-bottom: 2px solid #000000;
+      }
       
   }
 

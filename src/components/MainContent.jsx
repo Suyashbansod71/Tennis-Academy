@@ -1,11 +1,15 @@
 import React from "react";
 import "../styles/landingPage.css";
 import whoWeAre from "../images/whoWeAre.png"
+import achievements1 from "../images/achievements1.png"
 
 const MainContent = () => {
   return (
 
     //Main Content Section Code
+
+    <>
+
 <div className="whoWeAreSection">
   <div className="titles-right">
     <h4>Who We Are</h4>
@@ -35,6 +39,16 @@ const MainContent = () => {
 
   </div>
 </div>
+
+ <div className="achievements">
+  <div className="titles-left">
+    <h4>Achievements</h4>
+
+    <img src={achievements1} alt="Who We Are" className="" />
+  </div>
+
+</div> 
+</>
     
 
   );
