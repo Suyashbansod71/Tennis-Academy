@@ -41,6 +41,7 @@ const MainContent = () => {
         </div>
       </div>
 
+{/* Achievements Section */}
       <div className="achievements">
         <div className="titles-left">
           <h4>Achievements</h4>
@@ -77,6 +78,75 @@ const MainContent = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Coaches Section */}
+      <div className="coachSection">
+      <div className="titles-right">
+          <h4>Coaches</h4>
+        </div>
+
+        <div className="coachInfo">
+              <p><strong>Sardar singh Thakur</strong><br></br> <br></br>ITF level 1 <br></br>NIS/ SAI certified <br></br> ITF National officiate</p>
+              {/* <p> ITF level 1 <br></br>NIS/ SAI certified <br></br> ITF National officiate</p> */}
+
+              <p><strong>Shweta Thakur</strong><br></br> <br></br> AITA level II <br></br> AITA fitness level 1 <br></br> ITF National officiating </p>
+
+        </div>
+      </div>
+
+      {/* Our Branches Section */}
+      <div className="branchSection">
+      <div className="titles-left">
+          <h4>Our Branches</h4>
+        </div>
+
+        <div className="branchDetails">
+          <p>Branch 1</p>
+          <p>
+            Chhatrapati Shahu Maharaj Jaltaran Talav, MohanNagar Chinchwad 411019
+          </p>
+
+          {/* Clickable Google Maps embed */}
+          <a
+            href="https://www.google.com/maps?q=Chhatrapati+Shahu+Maharaj+Jaltaran+Talav,+MohanNagar,+Chinchwad,+411019"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2406.9641673965184!2d73.79658758367046!3d18.65086565479492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b82d8d2118a7%3A0x9c31ac927bec54e6!2sShahu%20Maharaj%20Talav!5e0!3m2!1sen!2sin!4v1750436982394!5m2!1sen!2sin" 
+           width="400" 
+           height="300" 
+           style={{"border":0, borderRadius: "20px"}} 
+           allowfullscreen="" 
+           loading="lazy" 
+           referrerpolicy="no-referrer-when-downgrade">
+           </iframe>
+          </a>
+
+
+          <p>Branch 2</p>
+          <p>
+          Veer savarkar udyan ganesh talav pradhikaran rd, sector no. 27, pradhikaran, nigadi, Pimpri Chinchwad, maharashtra 411033
+          </p>
+
+          {/* Clickable Google Maps embed */}
+          <a
+            href="https://www.google.com/maps?q=Chhatrapati+Shahu+Maharaj+Jaltaran+Talav,+MohanNagar,+Chinchwad,+411019"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.1531192695447!2d73.76024637605397!3d18.657123682463027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9e3bc11779d%3A0x9a324df0fb97bff1!2sVeer%20Savarkar%20Udyan!5e0!3m2!1sen!2sin!4v1750437238493!5m2!1sen!2sin" 
+           width="400" 
+           height="300" 
+           style={{"border":0, borderRadius: "20px"}} 
+           allowfullscreen="" 
+           loading="lazy" 
+           referrerpolicy="no-referrer-when-downgrade">
+
+           </iframe>
+          </a>
+        </div>
+
       </div>
     </>
   );

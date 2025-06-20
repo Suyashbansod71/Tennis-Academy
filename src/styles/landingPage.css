@@ -256,7 +256,23 @@ body {
         opacity: 1;
         transform: translateY(0);
       }
+
+      .coachSection {
+        padding: 10px;
+      }
+      .coachInfo {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      .branchSection {
+        padding: 10px;
+      }
       
+      .branchDetails {
+        display: flex;
+        justify-content: space-evenly;
+      }
   }
 
 
