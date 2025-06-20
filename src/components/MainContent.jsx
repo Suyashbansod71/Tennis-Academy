@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useRef, useState } from "react";
 import "../styles/landingPage.css";
 import whoWeAre from "../images/whoWeAre.png";
 import achievements from "../images/achievements.png";
@@ -6,7 +6,50 @@ import logoImage from "../images/mainLogo1.jpg";
 import downWardArrow from "../images/downwardArrow.png";
 import useScrollAnimation from "../hooks/useScrollAnimation";
 
+
 const MainContent = () => {
+  const images = [whoWeAre, achievements, logoImage];
+  const containerRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+  
+    const handleScroll = () => {
+      const items = container.querySelectorAll('.carouselItem');
+      const containerRect = container.getBoundingClientRect();
+      const containerCenter = containerRect.left + containerRect.width / 2;
+  
+      let closestIndex = 0;
+      let minDistance = Infinity;
+  
+      items.forEach((item, index) => {
+        const itemRect = item.getBoundingClientRect();
+        const itemCenter = itemRect.left + itemRect.width / 2;
+        const distance = Math.abs(containerCenter - itemCenter);
+  
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIndex = index;
+        }
+      });
+  
+      setActiveIndex(closestIndex);
+    };
+  
+    container.addEventListener('scroll', handleScroll, { passive: true });
+  
+    // Initial detection
+    handleScroll();
+  
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
+  
+
   useScrollAnimation();
   return (
     //Main Content Section Code
@@ -148,6 +191,23 @@ const MainContent = () => {
         </div>
 
       </div>
+
+      {/* Gallery Section */}
+      <div className="gallerySection">
+      <div className="titles-right">
+          <h4>Gallery</h4>
+        </div>
+  <div className="carousel">
+    {images.map((src, index) => (
+      <div
+        key={index}
+        className={`carouselItem ${index === activeIndex ? 'active' : ''}`}
+      >
+        <img src={src} alt={`Gallery ${index}`} />
+      </div>
+    ))}
+  </div>
+</div>
     </>
   );
 };
