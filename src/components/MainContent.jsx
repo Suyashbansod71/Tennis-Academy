@@ -3,51 +3,49 @@ import "../styles/landingPage.css";
 import whoWeAre from "../images/whoWeAre.png";
 import achievements from "../images/achievements.png";
 import logoImage from "../images/mainLogo1.jpg";
-import downWardArrow from "../images/downwardArrow.png";
+// import downWardArrow from "../images/downwardArrow.png";
 import useScrollAnimation from "../hooks/useScrollAnimation";
+// import racketVideo from "../videos/racketVideo.mp4"
+import netVideo from "../videos/netVideo.mp4"
+// import courtVideo from "../videos/courtVideo.mp4"
 
 
 const MainContent = () => {
   const images = [whoWeAre, achievements, logoImage];
-  const containerRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(0);
 
+  const [activeIndex, setActiveIndex] = useState(0);
+  const carouselRef = useRef(null);
+  const didMountRef = useRef(false);
+
+  // Auto-scroll
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-  
-    const handleScroll = () => {
-      const items = container.querySelectorAll('.carouselItem');
-      const containerRect = container.getBoundingClientRect();
-      const containerCenter = containerRect.left + containerRect.width / 2;
-  
-      let closestIndex = 0;
-      let minDistance = Infinity;
-  
-      items.forEach((item, index) => {
-        const itemRect = item.getBoundingClientRect();
-        const itemCenter = itemRect.left + itemRect.width / 2;
-        const distance = Math.abs(containerCenter - itemCenter);
-  
-        if (distance < minDistance) {
-          minDistance = distance;
-          closestIndex = index;
-        }
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  // Scroll to active item, but skip first render
+  useEffect(() => {
+    if (!didMountRef.current) {
+      didMountRef.current = true;
+      return;
+    }
+
+    const carousel = carouselRef.current;
+    if (carousel && carousel.children[activeIndex]) {
+      const activeItem = carousel.children[activeIndex];
+      const itemOffsetLeft = activeItem.offsetLeft - carousel.offsetLeft;
+      const centerOffset = (carousel.offsetWidth - activeItem.offsetWidth) / 2;
+    
+      carousel.scrollTo({
+        left: itemOffsetLeft - centerOffset,
+        behavior: 'smooth',
       });
-  
-      setActiveIndex(closestIndex);
-    };
-  
-    container.addEventListener('scroll', handleScroll, { passive: true });
-  
-    // Initial detection
-    handleScroll();
-  
-    return () => {
-      container.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-  
+    }
+    
+  }, [activeIndex]);
   
 
   useScrollAnimation();
@@ -59,7 +57,6 @@ const MainContent = () => {
       <div className="whoWeAreSection">
         <div className="titles-right">
           <h4>Who We Are</h4>
-          <h6>Sardar Warriors Lawn Tennis Academy</h6>
         </div>
 
         <div className="whoContent">
@@ -192,20 +189,34 @@ const MainContent = () => {
 
       </div>
 
-      {/* Gallery Section */}
-      <div className="gallerySection">
+<div className="gallerySection">
       <div className="titles-right">
-          <h4>Gallery</h4>
-        </div>
-  <div className="carousel">
-    {images.map((src, index) => (
-      <div
-        key={index}
-        className={`carouselItem ${index === activeIndex ? 'active' : ''}`}
-      >
-        <img src={src} alt={`Gallery ${index}`} />
+        <h4>Gallery</h4>
       </div>
-    ))}
+      <div className="carousel" ref={carouselRef}>
+        {images.map((src, index) => (
+          <div
+            key={index}
+            className={`carouselItem ${index === activeIndex ? 'active' : ''}`}
+          >
+            <img src={src} alt={`Gallery ${index}`} />
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div className="contactUsSection">
+  <video
+    className="backgroundVideo"
+    src={netVideo} 
+    autoPlay
+    muted
+    loop
+    playsInline
+  />
+
+  <div className="videoOverlayContent">
+    <h1>Join Us Now</h1>
   </div>
 </div>
     </>

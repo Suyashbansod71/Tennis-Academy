@@ -76,6 +76,7 @@ body {
         cursor: pointer;
         align-self: flex-end;
         font-size: 15px;
+        margin-right: 40px;
       }
       .downward-arrow {
         width: 10%;
@@ -89,12 +90,14 @@ body {
       }
 
       .titles-right {
+        /* font-family: 'Zen Dots', sans-serif; */
         text-align: right;
         position: relative;
       }
       
       .titles-right h4 {
-        font-family: 'Plush', sans-serif;
+        /* font-family: 'Plush', sans-serif; */
+        font-family: 'Zen Dots', sans-serif;
         font-size: 24px;
         color: #000000;
         display: inline-block;
@@ -150,7 +153,8 @@ body {
       }
       
       .titles-left h4 {
-        font-family: 'Plush', sans-serif;
+        /* font-family: 'Plush', sans-serif; */
+        font-family: 'Zen Dots', sans-serif;
         font-size: 24px;
         color: #000000;
         display: inline-block;
@@ -283,29 +287,33 @@ body {
       }
       
       .gallerySection {
-        width: 100%;            
-        height: 300px;          
+        width: 100%;
+        height: 350px;
         overflow-x: auto;
+        overflow-y: hidden; /* <-- Hides vertical scroll */
       }
       
       .carousel {
         display: flex;
         overflow-x: scroll;
+        overflow-y: hidden; /* <-- Ensure vertical overflow is hidden */
         scroll-snap-type: x mandatory;
         gap: 16px;
-        height: 100%;          
-        padding: 20px;
+        height: 100%;
+        padding: 20px 0; /* Adjust top/bottom padding to prevent overflow */
         box-sizing: border-box;
+        scroll-behavior: smooth;
       }
       
       .carouselItem {
         flex: 0 0 auto;
         scroll-snap-align: center;
-        width: 200px;          
-        height: 200px;          
+        width: 200px;
+        height: 200px;
         transition: transform 0.3s ease, opacity 0.3s ease;
         transform: scale(0.85);
-        opacity: 0.6;          
+        opacity: 0.6;
+        border-radius: 12px;
       }
       
       .carouselItem img {
@@ -317,11 +325,42 @@ body {
       
       .carouselItem.active {
         transform: scale(1.1);
-        opacity: 1 !important;   
+        opacity: 1 !important;
         z-index: 2;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
       }
+
+
+      .contactUsSection {
+        margin-top: 7em;
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
       
+      .backgroundVideo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: 0;
+      }
+      
+      .videoOverlayContent {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 3rem;
+        font-weight: bold;
+        z-index: 1;
+        text-shadow: 0 0 10px rgba(0,0,0,0.6);
+        text-align: center;
+      }
       
       
   }
