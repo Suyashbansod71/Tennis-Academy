@@ -143,7 +143,6 @@ body {
       }
       
       .achievements {
-        padding: 10px;
         display: flex;
         flex-direction: column;
       }
@@ -184,7 +183,7 @@ body {
         display: flex;
         align-items: flex-start; 
         justify-content: flex-start; 
-        overflow-y: auto;
+        /* overflow-y: auto; */
       }
       
       .timeline-container {
@@ -204,7 +203,7 @@ body {
         width: 4px;
         height: 100%;
         background-color: rgba(255, 255, 255, 0.5);
-        z-index: 1;
+        /* z-index: 1; */
       }
       
       .timeline-item {
@@ -219,6 +218,7 @@ body {
       .timeline-item.visible {
         opacity: 1;
         transform: translateY(0);
+        margin-right: 2.5em;
       }
       
       .timeline-item.right {
@@ -226,13 +226,27 @@ body {
       }
       
       .timeline-content {
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 0.1); 
         padding: 20px 30px;
         border-radius: 10px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px); 
+        border: 1px solid rgba(255, 255, 255, 0.2);
         width: 45%;
         position: relative;
         z-index: 2;
+        color: #C4E832;
+      }
+
+      .timeline-content h3 {
+        color: white;
+        font-size: 24px;
+      }
+
+      .timeline-content p {
+        font-size: 16px;
+        font-weight: bold;
       }
       
       .timeline-item.left .timeline-content::after,
@@ -264,19 +278,250 @@ body {
       .coachSection {
         padding: 10px;
       }
-      .coachInfo {
+      /* .coachInfo {
         display: flex;
         justify-content: space-evenly;
+      } */
+
+      .coachInfo {
+        display: flex;
+        gap: 30px;
+        max-width: 800px;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .coach-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        min-width: 280px;
+        flex: 1;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .coach-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #014B6E, #BBBB87);
+      }
+      
+      .coach-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      }
+      
+      .coach-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 20px;
+        text-align: center;
+        position: relative;
+      }
+      
+      .coach-name::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 2px;
+        background: linear-gradient(90deg, #014B6E, #BBBB87);
+      }
+      
+      .qualification {
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        border-radius: 10px;
+        padding: 12px 16px;
+        margin-bottom: 12px;
+        border-left: 4px solid #014B6E;
+        font-weight: 500;
+        color: #495057;
+        transition: all 0.3s ease;
+      }
+      
+      .qualification:hover {
+        background: linear-gradient(135deg, #e9ecef, #dee2e6);
+        transform: translateX(5px);
+      }
+      
+      .qualification:last-child {
+        margin-bottom: 0;
+      }
+      
+      .coach-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #014B6E, #BBBB87);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
       }
 
       .branchSection {
         padding: 10px;
       }
-      
-      .branchDetails {
+
+       .branchDetails {
         display: flex;
-        justify-content: space-evenly;
         flex-direction: column;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
+      .branch {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 24px;
+        padding: 32px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .branch::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(135deg, #014B6E, #BBBB87);
+      }
+      
+      .branch:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+      }
+      
+      .branch-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+      
+      .branch-icon {
+        width: 56px;
+        height: 56px;
+        background: linear-gradient(135deg, #014B6E, #BBBB87);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+      }
+      
+      .branch-title h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin: 0 0 8px 0;
+      }
+      
+      .branch-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #014B6E, #BBBB87);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      
+      .address-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 24px;
+        padding: 16px;
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        border-radius: 12px;
+        border-left: 4px solid #667eea;
+      }
+      
+      .address-icon {
+        color: #667eea;
+        margin-top: 2px;
+        flex-shrink: 0;
+      }
+      
+      .address-text {
+        color: #495057;
+        font-weight: 500;
+        line-height: 1.5;
+        margin: 0;
+      }
+      
+      .map-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+      }
+      
+      .map-container:hover {
+        transform: scale(1.02);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+      }
+      
+      .map-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 20px;
+      }
+      
+      .map-overlay {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #667eea;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        opacity: 0;
+        transition: all 0.3s ease;
+        pointer-events: none;
+      }
+      
+      .map-container:hover .map-overlay {
+        opacity: 1;
       }
 
 
@@ -290,19 +535,21 @@ body {
         width: 100%;
         height: 350px;
         overflow-x: auto;
-        overflow-y: hidden; /* <-- Hides vertical scroll */
+        overflow-y: hidden; 
       }
       
       .carousel {
         display: flex;
         overflow-x: scroll;
-        overflow-y: hidden; /* <-- Ensure vertical overflow is hidden */
+        overflow-y: hidden; 
         scroll-snap-type: x mandatory;
-        gap: 16px;
+        gap: 8px;
         height: 100%;
-        padding: 20px 0; /* Adjust top/bottom padding to prevent overflow */
+        padding: 20px 0; 
         box-sizing: border-box;
         scroll-behavior: smooth;
+        margin-left: 10px;
+        margin-right: 10px;
       }
       
       .carouselItem {

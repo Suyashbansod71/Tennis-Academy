@@ -5,6 +5,7 @@ import logoImage from "../images/mainLogo1.jpg";
 import instagramLogo from "../images/instagram.png";
 import youtubeLogo from "../images/youtube.png";
 import faceBookLogo from "../images/facebook.png";
+import Logo from "../images/LogoFinal.png"
 
 const Footer = () => {
  
@@ -22,9 +23,8 @@ const Footer = () => {
 
   return (
     <div className='footer'>
-       {/* <img src="./main-logo.jpeg" alt="" height= '100px' width='100px'/> */}
      <div className='sb_footer section_padding'>
-      <img src={logoImage} alt="Who We Are" className="foot_logo" />
+      <img src={Logo} alt="Who We Are" className="foot_logo" />
       <div className='sb_footer-links'>
         <div className='sb_footer-links_div shadow'>
           <h4>Important links</h4>
@@ -50,19 +50,10 @@ const Footer = () => {
             <p>Meditation</p>
           </a>
         </div>
-        {/* <div className='sb_footer-links_div shadow'>
-          <h4>Contact Us</h4>
-          <a href='tel:(+91) 8953279337'className='Foot-a'>
-            <p>(+91)8953279337</p>
-          </a>
-          <a href='mailto:yogawithkavitatripathi@gmail.com'className='Foot-a'>
-            <p className='text-break'>yogawithkavitatripathi@gmail.com</p>
-          </a>
-        </div> */}
         <div className='sb_footer-links_div shadow'>
           <h4>Social Links</h4>
           <p ><img src={instagramLogo} alt=" " />
-              <a className='foot-p' href='' target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a className='foot-p' href='https://www.instagram.com/sardarwarriors?igsh=ODQ5aWs0MXZsYTkx' target="_blank" rel="noopener noreferrer">Instagram</a>
           </p>
           <p><img src={faceBookLogo} alt=" " />
           <a className='foot-p' href=''  target="_blank" rel="noopener noreferrer">Facebook</a></p>

@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/landingPage.css";
 import logoImage from "../images/mainLogo1.jpg";
 import downWardArrow from "../images/downwardArrow.png";
+import Logo from "../images/LogoFinal.png"
 
 const HeroSection = () => {
   return (
@@ -9,7 +10,7 @@ const HeroSection = () => {
     //Hero Section Code
     <div className="heroSection">
       <div className="heroContent">
-        <img src={logoImage} alt="Logo" className="logo" />
+        <img src={Logo} alt="Logo" className="logo" />
         <h3 className="main-text">
           EAT{"\n"}TENNIS{"\n"}REPEAT
         </h3>
