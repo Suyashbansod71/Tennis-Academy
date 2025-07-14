@@ -13,7 +13,36 @@ body {
     font-family: Arial, sans-serif;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   @media ( min-width : 360px) {
+
+    .whatsapp-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      cursor: pointer;
+    }
+    
+    .floating {
+      animation: floatUpDown 2s ease-in-out infinite;
+    }
+    
+    @keyframes floatUpDown {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    
 
     .heroSection {
         background-image: url('../images/landingImage.jpg');
@@ -35,7 +64,7 @@ body {
       }
       
       .logo {
-        width: 100px;
+        width: 150px;
         height: auto;
         margin-bottom: 10px;
       }
@@ -46,6 +75,7 @@ body {
         white-space: pre-line;
         text-align: left;
         color: #ffffff; 
+        margin-top: -10px;
       }
 
       .heroSubContent {
@@ -53,7 +83,7 @@ body {
         display: flex;
         flex-direction: column;
         margin-left: -17em;
-        margin-top: 34em;
+        margin-top: 30em;
         width: 100%;
       }
       

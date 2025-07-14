@@ -15,7 +15,7 @@
         margin-left: 1em;
         padding-top: 1em;
         width:150px;
-        height: 150px;
+        height: auto;
     }
     
     
@@ -25,7 +25,7 @@
         min-width: 300px;
         border-bottom: 1px solid;
         width: auto;
-        margin: 2em 1rem;
+        margin: 1em 1rem;
         display: flex;
         padding: 1em;
         justify-content: flex-start;
@@ -48,7 +48,7 @@
     
     .foot-p{
         text-decoration: none;
-        color: black;
+        color: rgb(255, 255, 255);
     }
     .sb_footer-links_div h4{
         font-size: 23px;
@@ -77,6 +77,7 @@
         justify-content: space-between;
         margin-top: 0.2rem;
         color: white;
+        justify-content: center;
     }
     
     .sb_footer-below-links{
@@ -105,12 +106,15 @@
         margin-left: 65em;
         
     }
+    .socialLogos {
+        display: flex;
+    }
     
     @media screen and (max-width:644px){
      
         .foot_logo{
             width: 100px;
-            height: 100px;
+            height: auto;
             margin-left: 1em;
     
         }

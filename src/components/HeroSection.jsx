@@ -5,6 +5,15 @@ import downWardArrow from "../images/downwardArrow.png";
 import Logo from "../images/LogoFinal.png"
 
 const HeroSection = () => {
+
+  const whatsappNumber = "919876543210";
+  const whatsappMessage = "Hello! I'm interested in your academy.";
+  
+  const handleWhatsAppClick = () => {
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+  };
+
   return (
 
     //Hero Section Code
@@ -22,7 +31,7 @@ const HeroSection = () => {
           Everything You Need to{"\n"}
           Become The Best
         </h4>
-        <button className="join-button">Join Now</button>
+        <button className="join-button" onClick={handleWhatsAppClick}>Join Now</button>
         <img src={downWardArrow} alt="" className="downward-arrow" />
       </div>
     </div>

@@ -16,6 +16,7 @@ import court2 from "../images/court2.jpeg";
 import court3 from "../images/court3.jpeg";
 import racket1 from "../images/racket1.jpeg";
 import racket2 from "../images/racket2.jpeg";
+import { SocialIcon } from 'react-social-icons'
 
 
 
@@ -61,7 +62,7 @@ const MainContent = () => {
 
     <>
       {/* Who WE Are Section */}
-      <div className="whoWeAreSection">
+      <div className="whoWeAreSection" id="who-we-are">
         <div className="titles-right">
           <h4>Who We Are</h4>
         </div>
@@ -70,26 +71,20 @@ const MainContent = () => {
           <div className="whoText">
             <img src={whoWeAre} alt="Who We Are" className="whoImage" />
             <p>
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have suffered alteration in some form, buying to
-              injected humour, or randomised words.
+            At Sardar Warrior's Lawn Tennis Academy, we believe tennis is for everyone—kids, teens, adults, and young-at-heart seniors! 
             </p>
             <p>
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have suffered alteration
+            Whether you're picking up a racquet for the first time, getting back in the game, or chasing your next trophy, we’ve got a program for you. 
             </p>
             <p>
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have suffered alteration form, buying to injected
-              humour, or randomised words. There variations of passages of Lorem
-              Ipsum available,
+            Our friendly, experienced coaches create a fun, energetic environment where learning is exciting, improvement is constant, and every session leaves you smiling.
             </p>
           </div>
         </div>
       </div>
 
 {/* Achievements Section */}
-      <div className="achievements">
+      <div className="achievements" id="achievements">
         <div className="titles-left">
           <h4 style={{marginLeft: "10px"}} >Achievements</h4>
 
@@ -128,7 +123,7 @@ const MainContent = () => {
       </div>
 
       {/* Coaches Section */}
-      <div className="coachSection">
+      <div className="coachSection" id="coaches">
       <div className="titles-right">
           <h4>Coaches</h4>
         </div>
@@ -142,7 +137,7 @@ const MainContent = () => {
 
 <div className="coachInfo">
       <div className="coach-card">
-        <div className="coach-icon">ST</div>
+        {/* <div className="coach-icon"></div> */}
         <div className="coach-name">Sardar Singh Thakur</div>
         <div className="qualification">ITF Level 1</div>
         <div className="qualification">NIS/SAI Certified</div>
@@ -150,7 +145,7 @@ const MainContent = () => {
       </div>
 
       <div className="coach-card">
-        <div className="coach-icon">ST</div>
+        {/* <div className="coach-icon"></div> */}
         <div className="coach-name">Shweta Thakur</div>
         <div className="qualification">AITA Level II</div>
         <div className="qualification">AITA Fitness Level 1</div>
@@ -161,7 +156,7 @@ const MainContent = () => {
       </div>
 
       {/* Our Branches Section */}
-      <div className="branchSection">
+      <div className="branchSection" id="branches">
       <div className="titles-left">
           <h4>Our Branches</h4>
         </div>
@@ -236,7 +231,7 @@ const MainContent = () => {
 
       </div>
 
-      <div className="gallerySection">
+      <div className="gallerySection" id="gallery">
             <div className="titles-right">
               <h4 style={{marginRight: "10px"}} >Gallery</h4>
             </div>
@@ -263,7 +258,9 @@ const MainContent = () => {
     />
 
   <div className="videoOverlayContent">
-    <h1>Join Us Now</h1>
+    <h1>Join</h1>
+    <h1>Us</h1>
+    <h1>Now</h1>
   </div>
 </div>
     </>
