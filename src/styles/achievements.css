@@ -1,0 +1,386 @@
+/* achievements.css */
+
+/* General Styles */
+.achievements-container {
+    max-width: 1280px; /* Equivalent to max-w-7xl */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px; /* Equivalent to p-6 */
+    /* background-color: #f9fafb; */
+    min-height: 100vh; /* Equivalent to min-h-screen */
+  }
+  
+  .section-header {
+    margin-bottom: 32px; /* Equivalent to mb-8 */
+  }
+  
+  .section-title {
+    font-size: 30px; /* Equivalent to text-3xl */
+    font-weight: 700; /* Equivalent to font-bold */
+    color: #1f2937; /* Equivalent to text-gray-900 */
+    margin-bottom: 16px; /* Equivalent to mb-4 */
+    text-align: center; /* Equivalent to text-center */
+  }
+  
+  /* Design Selector */
+  .design-selector {
+    display: flex;
+    justify-content: center;
+    gap: 16px; /* Equivalent to gap-4 */
+    margin-bottom: 24px; /* Equivalent to mb-6 */
+  }
+  
+  .design-button {
+    padding: 12px 24px; /* Equivalent to px-6 py-3 */
+    border-radius: 8px; /* Equivalent to rounded-lg */
+    font-weight: 500; /* Equivalent to font-medium */
+    transition: all 0.3s ease; /* Equivalent to transition-all */
+    cursor: pointer;
+    border: none;
+    font-size: 17px;
+  }
+  
+  .design-button.active {
+    background: linear-gradient(135deg, #014B6E, #BBBB87);
+    color: #ffffff; /* Equivalent to text-white */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Equivalent to shadow-lg */
+  }
+  
+  .design-button:not(.active) {
+    background-color: #ffffff; /* Equivalent to bg-white */
+    color: #374151; /* Equivalent to text-gray-700 */
+  }
+  
+  .design-button:not(.active):hover {
+    background-color: #f3f4f6; /* Equivalent to hover:bg-gray-100 */
+  }
+  
+  /* Card Design */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Equivalent to grid-cols-1 */
+    gap: 24px; /* Equivalent to gap-6 */
+  }
+  
+  @media (min-width: 768px) { /* Equivalent to md:grid-cols-2 */
+    .card-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) { /* Equivalent to lg:grid-cols-3 */
+    .card-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .player-card {
+    background-color: #ffffff; /* Equivalent to bg-white */
+    border-radius: 12px; /* Equivalent to rounded-xl */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
+    transition: all 0.3s ease; /* Equivalent to transition-all duration-300 */
+    border: 1px solid #f3f4f6; /* Equivalent to border border-gray-100 */
+    overflow: hidden;
+  }
+  
+  .player-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Equivalent to hover:shadow-xl */
+  }
+  
+  .card-header {
+    background: linear-gradient(135deg, #014B6E, #BBBB87);/* Equivalent to bg-gradient-to-r from-green-600 to-blue-600 */
+    padding: 16px; /* Equivalent to p-4 */
+  }
+  
+  .card-title {
+    color: #ffffff; /* Equivalent to text-white */
+    font-weight: 700; /* Equivalent to font-bold */
+    font-size: 18px; /* Equivalent to text-lg */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Equivalent to gap-2 */
+  }
+  
+  .card-title .icon {
+    font-size: 20px; /* Equivalent to text-xl */
+  }
+  
+  .card-content {
+    padding: 16px; /* Equivalent to p-4 */
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Equivalent to space-y-3 */
+  }
+  
+  .ranking-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px; /* Equivalent to p-3 */
+    background-color: #f9fafb; /* Equivalent to bg-gray-50 */
+    border-radius: 8px; /* Equivalent to rounded-lg */
+    transition: background-color 0.15s ease-in-out; /* Equivalent to transition-colors */
+  }
+  
+  .ranking-item:hover {
+    background-color: #f3f4f6; /* Equivalent to hover:bg-gray-100 */
+  }
+  
+  .ranking-info {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Equivalent to gap-3 */
+  }
+  
+  .ranking-category {
+    font-weight: 600; /* Equivalent to font-semibold */
+    color: #1f2937; /* Equivalent to text-gray-800 */
+  }
+  
+  .ranking-state {
+    font-size: 14px; /* Equivalent to text-sm */
+    color: #4b5563; /* Equivalent to text-gray-600 */
+  }
+  
+  .rank-badge {
+    background: linear-gradient(135deg, #014B6E, #BBBB87); /* Equivalent to bg-gradient-to-r from-blue-500 to-purple-600 */
+    color: #ffffff; /* Equivalent to text-white */
+    padding: 4px 12px; /* Equivalent to px-3 py-1 */
+    border-radius: 9999px; /* Equivalent to rounded-full */
+    font-size: 14px; /* Equivalent to text-sm */
+    font-weight: 700; /* Equivalent to font-bold */
+  }
+  
+  /* Table Design */
+  .table-container {
+    background-color: #ffffff; /* Equivalent to bg-white */
+    border-radius: 12px; /* Equivalent to rounded-xl */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
+    overflow: hidden;
+  }
+  
+  .table-header {
+    background: linear-gradient(135deg, #014B6E, #BBBB87); /* Equivalent to bg-gradient-to-r from-green-600 to-blue-600 */
+    padding: 24px; /* Equivalent to p-6 */
+  }
+  
+  .table-title {
+    font-size: 24px; /* Equivalent to text-2xl */
+    font-weight: 700; /* Equivalent to font-bold */
+    color: #ffffff; /* Equivalent to text-white */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Equivalent to gap-2 */
+  }
+  
+  .table-title .icon {
+    font-size: 24px; /* Equivalent to text-2xl */
+  }
+  
+  .table-wrapper {
+    overflow-x: auto;
+  }
+  
+  .rankings-table {
+    width: 100%; /* Equivalent to w-full */
+    border-collapse: collapse; /* Ensure borders collapse properly */
+  }
+  
+  .rankings-table thead {
+    background-color: #f9fafb; /* Equivalent to bg-gray-50 */
+  }
+  
+  .rankings-table th {
+    padding: 16px 24px; /* Equivalent to px-6 py-4 */
+    text-align: left; /* Equivalent to text-left */
+    font-size: 14px; /* Equivalent to text-sm */
+    font-weight: 600; /* Equivalent to font-semibold */
+    color: #111827; /* Equivalent to text-gray-900 */
+  }
+  
+  .rankings-table tbody tr {
+    transition: background-color 0.15s ease-in-out; /* Equivalent to transition-colors */
+  }
+  
+  .rankings-table tbody tr:hover {
+    background-color: #f9fafb; /* Equivalent to hover:bg-gray-50 */
+  }
+  
+  .rankings-table td {
+    padding: 16px 24px; /* Equivalent to px-6 py-4 */
+    border-bottom: 1px solid #e5e7eb; /* Equivalent to divide-y divide-gray-200 */
+  }
+  
+  .rankings-table td:last-child {
+    border-bottom: none; /* No border for the last cell in a row */
+  }
+  
+  .player-name-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Equivalent to gap-3 */
+  }
+  
+  .player-name {
+    font-weight: 500; /* Equivalent to font-medium */
+    color: #111827; /* Equivalent to text-gray-900 */
+  }
+  
+  .category-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px; /* Equivalent to px-3 py-1 */
+    border-radius: 9999px; /* Equivalent to rounded-full */
+    font-size: 14px; /* Equivalent to text-sm */
+    font-weight: 500; /* Equivalent to font-medium */
+    background-color: #dbeafe; /* Equivalent to bg-blue-100 */
+    color: #1e40af; /* Equivalent to text-blue-800 */
+  }
+  
+  .state-text {
+    color: #4b5563; /* Equivalent to text-gray-600 */
+  }
+  
+  .table-rank-badge {
+    background: linear-gradient(135deg, #014B6E, #BBBB87); /* Equivalent to bg-gradient-to-r from-green-500 to-blue-500 */
+    color: #ffffff; /* Equivalent to text-white */
+    padding: 4px 12px; /* Equivalent to px-3 py-1 */
+    border-radius: 9999px; /* Equivalent to rounded-full */
+    font-size: 14px; /* Equivalent to text-sm */
+    font-weight: 700; /* Equivalent to font-bold */
+    display: inline-block;
+  }
+  
+  /* Expandable Design */
+  .expandable-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Equivalent to space-y-4 */
+  }
+  
+  .expandable-card {
+    background-color: #ffffff; /* Equivalent to bg-white */
+    border-radius: 12px; /* Equivalent to rounded-xl */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
+    border: 1px solid #f3f4f6; /* Equivalent to border border-gray-100 */
+    overflow: hidden;
+  }
+  
+  .expandable-header {
+    background: linear-gradient(135deg, #014B6E, #BBBB87); /* Equivalent to bg-gradient-to-r from-green-600 to-blue-600 */
+    padding: 16px; /* Equivalent to p-4 */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Equivalent to transition-all duration-300 */
+  }
+  
+  .expandable-header:hover {
+    background: linear-gradient(135deg, #014B6E, #BBBB87); /* Equivalent to hover:from-green-700 hover:to-blue-700 */
+  }
+  
+  .expandable-header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .expandable-player-name {
+    color: #ffffff; /* Equivalent to text-white */
+    font-weight: 700; /* Equivalent to font-bold */
+    font-size: 18px; /* Equivalent to text-lg */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Equivalent to gap-2 */
+  }
+  
+  .expandable-player-name .icon {
+    font-size: 20px; /* Equivalent to text-xl */
+  }
+  
+  .expandable-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Equivalent to gap-2 */
+  }
+  
+  .category-count {
+    color: #ffffff; /* Equivalent to text-white */
+    font-size: 14px; /* Equivalent to text-sm */
+    background-color: rgba(255, 255, 255, 0.2); /* Equivalent to bg-white/20 */
+    padding: 4px 8px; /* Equivalent to px-2 py-1 */
+    border-radius: 9999px; /* Equivalent to rounded-full */
+  }
+  
+  .expand-toggle-icon {
+    color: #ffffff; /* Equivalent to text-white */
+    font-size: 18px; /* Equivalent to text-lg */
+  }
+  
+  .expandable-content {
+    padding: 16px; /* Equivalent to p-4 */
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Equivalent to space-y-3 */
+    background-color: #f9fafb; /* Equivalent to bg-gray-50 */
+  }
+  
+  .expandable-ranking-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px; /* Equivalent to p-4 */
+    background-color: #ffffff; /* Equivalent to bg-white */
+    border-radius: 8px; /* Equivalent to rounded-lg */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Equivalent to shadow-sm */
+    transition: box-shadow 0.15s ease-in-out; /* Equivalent to transition-shadow */
+  }
+  
+  .expandable-ranking-item:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Equivalent to hover:shadow-md */
+  }
+  
+  .expandable-ranking-info {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Equivalent to gap-3 */
+  }
+  
+  .expandable-category {
+    font-weight: 600; /* Equivalent to font-semibold */
+    color: #1f2937; /* Equivalent to text-gray-800 */
+    font-size: 18px; /* Equivalent to text-lg */
+  }
+  
+  .expandable-state {
+    font-size: 14px; /* Equivalent to text-sm */
+    color: #4b5563; /* Equivalent to text-gray-600 */
+  }
+  
+  .expandable-rank-badge {
+    background: linear-gradient(135deg,#BBBB87,  #014B6E); /* Equivalent to bg-gradient-to-r from-purple-500 to-pink-500 */
+    color: #ffffff; /* Equivalent to text-white */
+    padding: 8px 16px; /* Equivalent to px-4 py-2 */
+    border-radius: 9999px; /* Equivalent to rounded-full */
+    font-size: 14px; /* Equivalent to text-sm */
+    font-weight: 700; /* Equivalent to font-bold */
+  }
+  
+  /* Rank Icons */
+  .rank-icon {
+    font-size: 20px; /* Equivalent to text-xl */
+  }
+  
+  .rank-icon.gold {
+    color: #f59e0b; /* Equivalent to text-yellow-500 */
+  }
+  
+  .rank-icon.silver {
+    color: #9ca3af; /* Equivalent to text-gray-400 */
+  }
+  
+  .rank-icon.bronze {
+    color: #ea580c; /* Equivalent to text-orange-600 */
+  }
+  
+  .rank-icon.star {
+    color: #3b82f6; /* Equivalent to text-blue-500 */
+  }

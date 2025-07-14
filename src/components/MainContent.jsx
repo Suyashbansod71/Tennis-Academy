@@ -1,8 +1,6 @@
 import React, {useEffect, useRef, useState } from "react";
 import "../styles/landingPage.css";
 import whoWeAre from "../images/whoWeAre.png";
-import achievements from "../images/achievements.png";
-import logoImage from "../images/mainLogo1.jpg";
 // import downWardArrow from "../images/downwardArrow.png";
 import useScrollAnimation from "../hooks/useScrollAnimation";
 // import racketVideo from "../videos/racketVideo.mp4"
@@ -16,7 +14,7 @@ import court2 from "../images/court2.jpeg";
 import court3 from "../images/court3.jpeg";
 import racket1 from "../images/racket1.jpeg";
 import racket2 from "../images/racket2.jpeg";
-import { SocialIcon } from 'react-social-icons'
+import Achievements from "./Achievements";
 
 
 
@@ -88,7 +86,8 @@ const MainContent = () => {
         <div className="titles-left">
           <h4 style={{marginLeft: "10px"}} >Achievements</h4>
 
-          <div className="heroSectionAchievements">
+          <Achievements />
+          {/* <div className="heroSectionAchievements">
             <div className="timeline-container">
               <div className="timeline-item left">
                 <div className="timeline-content">
@@ -118,7 +117,7 @@ const MainContent = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -138,7 +137,7 @@ const MainContent = () => {
 <div className="coachInfo">
       <div className="coach-card">
         {/* <div className="coach-icon"></div> */}
-        <div className="coach-name">Sardar Singh Thakur</div>
+        <div className="coach-name">Sardarsingh Thakur</div>
         <div className="qualification">ITF Level 1</div>
         <div className="qualification">NIS/SAI Certified</div>
         <div className="qualification">ITF National Officiate</div>
