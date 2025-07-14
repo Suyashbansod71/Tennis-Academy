@@ -22,6 +22,14 @@ const Footer = () => {
      }
   }
 
+  const whatsappNumber = "918329939634";
+  const whatsappMessage = "Hello! I'm interested in your academy.";
+  
+  const handleWhatsAppClick = () => {
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+  };
+
   return (
     <div className='footer'>
      <div className='sb_footer section_padding'>
@@ -60,7 +68,7 @@ const Footer = () => {
             <SocialIcon url ="https://www.instagram.com/sardarwarriors?igsh=ODQ5aWs0MXZsYTkx" className='floating'/>
           </p>
           <p>
-          <SocialIcon url="https://wa.me/918329939634" network="whatsapp" className='floating' style={{marginLeft: "1em"}}/>
+          <SocialIcon url="https://wa.me/918329939634" network="whatsapp" className='floating' style={{marginLeft: "1em"}}  onClick={handleWhatsAppClick}/>
           </p>
           </div>
 
