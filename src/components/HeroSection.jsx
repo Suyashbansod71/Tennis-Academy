@@ -6,7 +6,7 @@ import Logo from "../images/LogoFinal.png"
 
 const HeroSection = () => {
 
-  const whatsappNumber = "919876543210";
+  const whatsappNumber = "918329939634";
   const whatsappMessage = "Hello! I'm interested in your academy.";
   
   const handleWhatsAppClick = () => {
