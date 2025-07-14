@@ -60,7 +60,7 @@ const Footer = () => {
             <SocialIcon url ="https://www.instagram.com/sardarwarriors?igsh=ODQ5aWs0MXZsYTkx" className='floating'/>
           </p>
           <p>
-          <SocialIcon url="https://wa.me/919876543210" network="whatsapp" className='floating' style={{marginLeft: "1em"}}/>
+          <SocialIcon url="https://wa.me/918329939634" network="whatsapp" className='floating' style={{marginLeft: "1em"}}/>
           </p>
           </div>
 
