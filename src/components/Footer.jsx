@@ -46,6 +46,9 @@ const Footer = () => {
           <a href='#coaches' className='Foot-a'>
             <p>Coaches</p>
           </a>
+          <a href='#facilities' className='Foot-a'>
+            <p>Facilities Provided</p>
+          </a>
         </div>
 
         <div className='sb_footer-links_div shadow'>

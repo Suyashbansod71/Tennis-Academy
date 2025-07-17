@@ -52,8 +52,37 @@ const MainContent = () => {
     }
     
   }, [activeIndex]);
-  
+  // State to keep track of the currently selected ranked player's ID for details expansion
+  const [selectedPlayerId, setSelectedPlayerId] = useState(null);
+  // State to manage the active tab: 'ranked' or 'other'
+  const [activeTab, setActiveTab] = useState('ranked'); // Default to 'ranked' tab
 
+  // Function to handle click on a ranked player's name
+  const handlePlayerClick = (id) => {
+    setSelectedPlayerId(prevId => (prevId === id ? null : id));
+  };
+  const rankedPlayers = [
+    { id: 1, name: "Adira Sandeep Bhagat", rankings: [
+      { category: "U10", rank: 2, state: "MAHA"},
+      { category: "U12", rank: 10, state: "MAHA" }
+    ]},
+    { id: 2, name: "Sejal Arun Jadhav", rankings: [
+      { category: "U10", rank: 3, state: "MAHA" },
+      { category: "U12", rank: 9, state: "MAHA" }
+    ]},
+    { id: 3, name: "Tasmai Nagesh Pohakar", rankings: [
+      { category: "U10", rank: 5, state: "MAHA"},
+      { category: "U12", rank: 11, state: "MAHA"}
+    ]},
+  ];
+
+  const otherPlayers = [
+    "Devhuti Chauhan",
+    "Navita Yeole",
+    "Bela Inamdar",
+    "Darsh Lunkad",
+    "Akshita Mathapati"
+  ];
   useScrollAnimation();
   return (
     //Main Content Section Code
@@ -86,7 +115,71 @@ const MainContent = () => {
         <div className="titles-left">
           <h4 style={{marginLeft: "10px"}} >Achievements</h4>
 
-          <Achievements />
+
+         <section className="achievements-section">
+  
+          <div className="tab-navigation">
+        <button
+          className={`tab-button ${activeTab === 'ranked' ? 'active' : ''}`}
+          onClick={() => {
+            setActiveTab('ranked');
+            setSelectedPlayerId(null); // Reset selected player when changing tabs
+          }}
+        >
+          Ranked Players
+        </button>
+        <button
+          className={`tab-button ${activeTab === 'other' ? 'active' : ''}`}
+          onClick={() => {
+            setActiveTab('other');
+            setSelectedPlayerId(null); // Reset selected player when changing tabs
+          }}
+        >
+          Other Prominent Players
+        </button>
+      </div>
+
+      {/* Tab Content */}
+      <div className="tab-content">
+        {activeTab === 'ranked' && (
+          <div className="players-grid">
+            {rankedPlayers.map(player => (
+              <div
+                key={player.id}
+                className={`player-card ranked-player ${selectedPlayerId === player.id ? 'active' : ''}`}
+                onClick={() => handlePlayerClick(player.id)}
+              >
+                <span className="player-name">{player.name}</span>
+                {/* Conditionally render ranking details if this player is selected */}
+                {selectedPlayerId === player.id && (
+                  <div className="ranking-details">
+                    {/* Render all rankings on a single line, separated by a pipe */}
+                    {player.rankings.map((ranking, index) => (
+                      <span key={index} className="ranking-info">
+                        <strong>{ranking.category}:</strong> Rank {ranking.rank}, {ranking.state}
+                        {index < player.rankings.length - 1 && ' | '}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {activeTab === 'other' && (
+          <div className="players-grid">
+            {otherPlayers.map((player, index) => (
+              <div key={index} className="player-card">
+                <span className="player-name">{player}</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+      </section> 
+
+          {/* <Achievements /> */}
           {/* <div className="heroSectionAchievements">
             <div className="timeline-container">
               <div className="timeline-item left">
@@ -154,9 +247,67 @@ const MainContent = () => {
 
       </div>
 
+
+      {/* Facilities Provided Section */}
+<div className="facilitiesSection" id="facilities">
+
+<div className="titles-left">
+          <h4>Facilities</h4>
+        </div>
+
+<div className="sections-wrapper">
+        {/* Facilities Provided Section */}
+        <div className="info-block">
+          <h3>Facilities Provided</h3>
+          <ul className="feature-list">
+            <li className="feature-item">
+              <span className="feature-icon">🎾</span> {/* Tennis ball icon */}
+              Comprehensive Diet Plans tailored for peak athletic performance.
+            </li>
+            <li className="feature-item">
+              <span className="feature-icon">💪</span> {/* Bicep icon */}
+              Personalized Fitness Training Programs to enhance strength and endurance.
+            </li>
+            <li className="feature-item">
+              <span className="feature-icon">📈</span> {/* Chart icon */}
+              Detailed Player Growth Charts and advanced Performance Tracking.
+            </li>
+            <li className="feature-item">
+              <span className="feature-icon">🏟️</span> {/* Stadium icon */}
+              State-of-the-art Tennis Courts with premium surfacing.
+            </li>
+          </ul>
+        </div>
+
+        {/* Coaching Timings & Personal Training Section */}
+        <div className="info-block">
+          <h3>Coaching & Personal Training</h3>
+          <ul className="feature-list">
+            <li className="feature-item">
+              <span className="feature-icon">👨‍🏫</span> 
+              Group Coaching Sessions for all levels: Beginner, Intermediate, and Advanced.
+            </li>
+            <li className="feature-item">
+              <span className="feature-icon">⏰</span> 
+              Flexible Coaching Timings: Morning, Afternoon, and Evening slots available to fit your schedule.
+            </li>
+            <li className="feature-item">
+              <span className="feature-icon">🏆</span>
+              Dedicated One-on-One Personal Training for Professional Players aiming for excellence.
+            </li>
+            <li className="feature-item">
+              <span className="feature-icon">🧠</span> 
+              Advanced Match Strategy and Mental Toughness Coaching to build a winning mindset.
+            </li>
+          </ul>
+        </div>
+      </div>
+</div>
+
+
       {/* Our Branches Section */}
       <div className="branchSection" id="branches">
-      <div className="titles-left">
+      <div className="titles-right">
           <h4>Our Branches</h4>
         </div>
 
@@ -231,7 +382,7 @@ const MainContent = () => {
       </div>
 
       <div className="gallerySection" id="gallery">
-            <div className="titles-right">
+            <div className="titles-left">
               <h4 style={{marginRight: "10px"}} >Gallery</h4>
             </div>
             <div className="carousel" ref={carouselRef}>
