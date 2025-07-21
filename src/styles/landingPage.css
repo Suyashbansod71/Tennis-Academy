@@ -131,7 +131,7 @@ body {
         /* font-family: 'Plush', sans-serif; */
         font-family: 'Zen Dots', sans-serif;
         font-size: 24px;
-        color: #000000;
+        color: #1c2732;
         display: inline-block;
         position: relative;
         padding-bottom: 8px;
@@ -144,8 +144,8 @@ body {
         bottom: 0;
         width: 100%;
         height: 6px;
-        border-top: 2px solid #000000;
-        border-bottom: 2px solid #000000;
+        border-top: 2px solid #1c2732;
+        border-bottom: 2px solid #1c2732;
       }
       
       .whoContent {
@@ -189,7 +189,7 @@ body {
         /* font-family: 'Plush', sans-serif; */
         font-family: 'Zen Dots', sans-serif;
         font-size: 24px;
-        color: #000000;
+        color: #1c2732;
         display: inline-block;
         position: relative;
         padding-bottom: 8px;
@@ -202,8 +202,8 @@ body {
         bottom: 0;
         width: 100%;
         height: 6px;
-        border-top: 2px solid #000000;
-        border-bottom: 2px solid #000000;
+        border-top: 2px solid #1c2732;
+        border-bottom: 2px solid #1c2732;
       }
 
       .heroSectionAchievements {
@@ -676,8 +676,8 @@ body {
   border-radius: 10em; 
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #000000;
-  font-size: 1.1em;
+  color: #1c2732;
+  font-size: 0.8em;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -701,7 +701,7 @@ body {
 }
 
 .tab-content {
-  min-height: 200px; 
+  /* min-height: 200px;  */
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -750,7 +750,7 @@ body {
 }
 
 .player-name {
-  font-size: 1.1em;
+  font-size: 1em;
   font-weight: 600;
   color: #ffffff;
   margin-bottom: 6px; 
@@ -806,62 +806,83 @@ h2 {
 .facilitiesSection {
   padding: 10px;
 }
-.sections-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px; 
-  justify-content: center;
-  /* padding: 0.5em; */
+.facilities-container {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.info-block {
-  flex: 1; 
-  min-width: 300px; 
-  background-color: #ffffff; 
-  border: 1px solid #ffffff;
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
 }
 
-.info-block:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); /* More pronounced shadow on hover */
-}
-
-.info-block h3 {
-  font-size: 1.8em;
-  color: #2c3e50;
-  margin-bottom: 20px;
-  font-weight: 600;
+.facility-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px 15px;
   text-align: center;
-  /* padding-bottom: 10px;
-  border-bottom: 2px solid #e9f5ee;  */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.feature-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.facility-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
 
-.feature-item {
-  display: flex;
-  align-items: flex-start; /* Align icon and text at the top */
-  gap: 12px;
-  margin-bottom: 15px;
-  font-size: 1.05em;
-  line-height: 1.5;
-  color: #555;
+.facility-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  display: block;
 }
 
-.feature-icon {
-  font-size: 1.5em; /* Larger icon size */
-  color: #4CAF50; /* Green icon color */
-  flex-shrink: 0; /* Prevent icon from shrinking */
+.facility-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 5px;
 }
 
+.facility-desc {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  line-height: 1.3;
+}
+
+.court-colors {
+  font-weight: 600;
+}
+
+.hard-court {
+  color: #3498db;
+}
+
+.clay-court {
+  color: #d2691e;
+}
+
+@media (max-width: 600px) {
+  .facilities-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+  }
+  
+  .facility-card {
+      padding: 15px 10px;
+  }
+  
+  .facility-icon {
+      font-size: 1.5rem;
+  }
+  
+  
+  .facility-desc {
+      font-size: 0.75rem;
+  }
+}
 }
 
 

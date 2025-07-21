@@ -14,7 +14,6 @@ import court2 from "../images/court2.jpeg";
 import court3 from "../images/court3.jpeg";
 import racket1 from "../images/racket1.jpeg";
 import racket2 from "../images/racket2.jpeg";
-import Achievements from "./Achievements";
 
 
 
@@ -255,53 +254,50 @@ const MainContent = () => {
           <h4>Facilities</h4>
         </div>
 
-<div className="sections-wrapper">
-        {/* Facilities Provided Section */}
-        <div className="info-block">
-          <h3>Facilities Provided</h3>
-          <ul className="feature-list">
-            <li className="feature-item">
-              <span className="feature-icon">🎾</span> {/* Tennis ball icon */}
-              Comprehensive Diet Plans tailored for peak athletic performance.
-            </li>
-            <li className="feature-item">
-              <span className="feature-icon">💪</span> {/* Bicep icon */}
-              Personalized Fitness Training Programs to enhance strength and endurance.
-            </li>
-            <li className="feature-item">
-              <span className="feature-icon">📈</span> {/* Chart icon */}
-              Detailed Player Growth Charts and advanced Performance Tracking.
-            </li>
-            <li className="feature-item">
-              <span className="feature-icon">🏟️</span> {/* Stadium icon */}
-              State-of-the-art Tennis Courts with premium surfacing.
-            </li>
-          </ul>
-        </div>
+        <div class="facilities-container">
+        <div class="facilities-grid">
+            
+            <div class="facility-card">
+                <span class="facility-icon">🎾</span>
+                <h3 class="facility-title">Diet Plans</h3>
+                <p class="facility-desc">Tailored nutrition for peak performance</p>
+            </div>
 
-        {/* Coaching Timings & Personal Training Section */}
-        <div className="info-block">
-          <h3>Coaching & Personal Training</h3>
-          <ul className="feature-list">
-            <li className="feature-item">
-              <span className="feature-icon">👨‍🏫</span> 
-              Group Coaching Sessions for all levels: Beginner, Intermediate, and Advanced.
-            </li>
-            <li className="feature-item">
-              <span className="feature-icon">⏰</span> 
-              Flexible Coaching Timings: Morning, Afternoon, and Evening slots available to fit your schedule.
-            </li>
-            <li className="feature-item">
-              <span className="feature-icon">🏆</span>
-              Dedicated One-on-One Personal Training for Professional Players aiming for excellence.
-            </li>
-            <li className="feature-item">
-              <span className="feature-icon">🧠</span> 
-              Advanced Match Strategy and Mental Toughness Coaching to build a winning mindset.
-            </li>
-          </ul>
+            <div class="facility-card">
+                <span class="facility-icon">💪</span>
+                <h3 class="facility-title">Fitness Plans</h3>
+                <p class="facility-desc">Personalized training programs</p>
+            </div>
+
+            <div class="facility-card">
+                <span class="facility-icon">📈</span>
+                <h3 class="facility-title">Growth Charts</h3>
+                <p class="facility-desc">Track player development</p>
+            </div>
+
+            <div class="facility-card">
+                <span class="facility-icon">🏟️</span>
+                <h3 class="facility-title">Court Types</h3>
+                <p class="facility-desc">
+                    <span class="court-colors hard-court">Hard</span> &amp; 
+                    <span class="court-colors clay-court">Clay</span> Courts
+                </p>
+            </div>
+
+            <div class="facility-card">
+                <span class="facility-icon">⏰</span>
+                <h3 class="facility-title">Flexible Timings</h3>
+                <p class="facility-desc">Morning & evening slots</p>
+            </div>
+
+            <div class="facility-card">
+                <span class="facility-icon">🏆</span>
+                <h3 class="facility-title">Personal Training</h3>
+                <p class="facility-desc">1-on-1 coaching for professionals</p>
+            </div>
+
         </div>
-      </div>
+    </div>
 </div>
 
 
