@@ -27,7 +27,7 @@ const MainContent = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, [images.length]);
@@ -233,12 +233,13 @@ const MainContent = () => {
         <div className="qualification">ITF Level 1</div>
         <div className="qualification">NIS/SAI Certified</div>
         <div className="qualification">ITF National Officiate</div>
+        <div className="qualification">AITA Level 4</div>
       </div>
 
       <div className="coach-card">
         {/* <div className="coach-icon"></div> */}
         <div className="coach-name">Shweta Thakur</div>
-        <div className="qualification">AITA Level II</div>
+        <div className="qualification">AITA Level 2</div>
         <div className="qualification">AITA Fitness Level 1</div>
         <div className="qualification">ITF National Officiating</div>
       </div>
@@ -404,8 +405,7 @@ const MainContent = () => {
     />
 
   <div className="videoOverlayContent">
-    <h1>Join</h1>
-    <h1>Us</h1>
+    <h1 style = {{fontSize: "60px"}}>Join Us</h1>
     <h1>Now</h1>
   </div>
 </div>
