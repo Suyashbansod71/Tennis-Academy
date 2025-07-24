@@ -21,7 +21,7 @@ const HeroSection = () => {
       <div className="heroContent">
         <img src={Logo} alt="Logo" className="logo" />
         <h3 className="main-text">
-          EAT{"\n"}TENNIS{"\n"}REPEAT
+          SARDAR WARRIORS{"\n"} LAWN TENNIS{"\n"}ACADEMY
         </h3>
       </div>
 
